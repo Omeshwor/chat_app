@@ -1,2 +1,40 @@
-<h1>Users#index</h1>
-<p>Find me in app/views/users/index.html.erb</p>
+<h4 class="ui center aligned medium icon header">
+    Listing all users
+</h4>
+
+<div class="ui pagination menu centered grid">
+    <%= will_paginate @users, renderer: WillPaginateSemanticUi::ActionView::Renderer %>
+</div>
+
+<div class="ui two column grid">
+    <% @users.each do |user| %>
+        <div class="column">
+            <div class="ui cards">
+                <div class="ui card">
+                    <div class="content">
+                        <%= link_to user.username, user_path(user), class: "header" %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <% end %>
+</div>
+
+
+<!-- <div class="ui pagination menu">
+  <a class="active item">
+    1
+  </a>
+  <div class="disabled item">
+    ...
+  </div>
+  <a class="item">
+    10
+  </a>
+  <a class="item">
+    11
+  </a>
+  <a class="item">
+    12
+  </a>
+</div> -->
