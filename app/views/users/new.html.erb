@@ -1,17 +1,5 @@
-<%= render 'shared/errors', obj: @user %>
-
-<%= form_for(@user, :html => {class:"form-horizontal ui form", role: "form"}) do |f| %>
-    <div class="field">
-        <%= f.label :username %>
-        <%= f.text_field :username, class:"form-control", placeholder:"Enter Username", autofocus: true %>
-    </div>
-    <div class="field">
-        <%= f.label :password %>
-        <%= f.password_field :password, class:"form-control", placeholder:"Enter password"%>
-    </div>
-    <div class="field">
-        <%= f.label :password_confirmation %>
-        <%= f.password_field :password_confirmation, class:"form-control", placeholder:"Enter password again"%>
-    </div>
-    <%= f.submit "Sign Up", class:"ui button" %>
-<% end %>
+<h2 align="center" class="ui header">
+    <i class="circular big grey inverted user plus icon"></i>
+</h2>
+<h2 align="center" class="ui header 2">New User Signup</h2>
+<%= render 'user_form' %>
