@@ -1,0 +1,17 @@
+<% if obj.errors.any? %>
+    <div class="ui negative message">
+        <div class="heading">
+            <h3 class="title">
+                <%= pluralize(obj.errors.count, "error") %>
+                in form submission:
+            </h3>
+            <div class="body">
+                <ul>
+                    <% obj.errors.full_messages.each do |msg| %>
+                        <li class="error_listing"><%= msg %></li>
+                    <% end %>
+                </ul>
+            </div>
+        </div>
+    </div>
+<% end %>
