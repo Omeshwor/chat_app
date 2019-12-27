@@ -7,4 +7,11 @@ module UsersHelper
         !!current_user
     end
 
+    def require_user
+        if !logged_in?
+            flash[:negative] = "You must be logged in to perform that task"
+            redirect_to login_path
+        end
+    end
+
 end
